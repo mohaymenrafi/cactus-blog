@@ -3,6 +3,7 @@ import { request, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
+// Get all posts
 export const getPosts = async () => {
   const query = gql`
     query allPosts {
@@ -38,6 +39,7 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
+// Recent posts
 export const getRecentPosts = async () => {
   const query = gql`
     query getRecentPosts {
@@ -56,6 +58,7 @@ export const getRecentPosts = async () => {
   return result.posts;
 };
 
+// Similar posts
 export const getSimilarPosts = async (slug, categories) => {
   const query = gql`
     query getSimilarPosts($slug: String!, $categories: [String!]) {
@@ -80,6 +83,7 @@ export const getSimilarPosts = async (slug, categories) => {
   return result.posts;
 };
 
+// Get all categories
 export const getCategories = async () => {
   const query = gql`
     query getPostCategories {
@@ -94,6 +98,7 @@ export const getCategories = async () => {
   return result.categories;
 };
 
+// Single post details
 export const getPostDetails = async (slug) => {
   const query = gql`
     query GetPostDetails($slug: String!) {
@@ -135,6 +140,7 @@ export const submitComment = async (comment) => {
   return result.data;
 };
 
+// Get Comments
 export const getComments = async (slug) => {
   const query = gql`
     query GetComments($slug: String!) {
