@@ -17,6 +17,15 @@ export default function PostDetails({ post }) {
       if (obj.underline) {
         modifiedText = <u key={index}>{text}</u>;
       }
+      if (obj.href) {
+        modifiedText = (
+          <a href={obj.href} className="text-red-600">
+            {obj.children.map((linkText, i) => (
+              <React.Fragment key={i}>{linkText.text}</React.Fragment>
+            ))}
+          </a>
+        );
+      }
     }
 
     switch (type) {
@@ -100,13 +109,16 @@ export default function PostDetails({ post }) {
         </div>
       </div>
       <h1 className="font-semibold text-3xl m-6 text-center">{post.title}</h1>
-      {console.log(post.content.raw.children)}
-      {post.content.raw.children.map((typeObj, index) => {
-        const children = typeObj.children.map((item, itemIndex) =>
-          getContentFragment(itemIndex, item.text, item)
-        );
-        return getContentFragment(index, children, typeObj, typeObj.type);
-      })}
+      {/* {console.log(post.content.raw.children)} */}
+      <div className="px-12 lg:px-0">
+        {post.content.raw.children.map((typeObj, index) => {
+          const children = typeObj.children.map((item, itemIndex) =>
+            getContentFragment(itemIndex, item.text, item)
+          );
+          // console.log(children);
+          return getContentFragment(index, children, typeObj, typeObj.type);
+        })}
+      </div>
     </div>
   );
 }

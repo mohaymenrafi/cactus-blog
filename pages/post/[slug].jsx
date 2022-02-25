@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import {
   Author,
@@ -6,6 +7,7 @@ import {
   PostDetails,
   Categories,
   PostWidget,
+  Loader,
 } from '../../components';
 import { getPostDetails, getPosts } from '../../services';
 
@@ -25,8 +27,9 @@ export async function getStaticPaths() {
   };
 }
 
-export default function postDetails({ post }) {
-  console.log(post);
+export default function SinglePostDetails({ post }) {
+  const router = useRouter();
+  if (router.fallback) <Loader />;
   return (
     <div className="container mx-auto px-10 mb-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

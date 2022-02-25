@@ -1,10 +1,6 @@
 import Head from 'next/head';
 import { PostCard, PostWidget, Categories } from '../components';
 import { getPosts } from '../services';
-// const posts = [
-//   { title: 'React testing', excerpt: 'Learn react resting' },
-//   { title: 'React testing 2', excerpt: 'Learn react resting 2' },
-// ];
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];

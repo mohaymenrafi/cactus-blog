@@ -4,6 +4,7 @@
     "react/prop-types": "off",
     "@next/next/link-passhref": "off",
     "@next/next/no-img-element": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "import/no-cycle": "off"
   }
 }
