@@ -1,6 +1,6 @@
 ### Blog Website using Nextjs & GraphQL
 
-`To view it live` [click here](link)
+`To view it live` [Click here](link)
 
 ## Packages and Tech Stacks used here:
 

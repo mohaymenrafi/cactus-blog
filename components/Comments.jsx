@@ -8,7 +8,6 @@ export default function Comments({ slug }) {
   useEffect(() => {
     getComments(slug).then((res) => setComments(res));
   }, []);
-  console.log(comments);
   return (
     <div>
       {comments.length > 0 && (
