@@ -1,6 +1,6 @@
 ### Blog Website using Nextjs & GraphQL
 
-`To view it live` [Click here](link)
+`To view it live` [Click here](https://cactus-blog.vercel.app/)
 
 ## Packages and Tech Stacks used here:
 
